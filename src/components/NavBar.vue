@@ -55,6 +55,11 @@ export default {
                     title:"Inicio",
                     name:'Home'
                 },
+                {
+                    icon:'mdi-format-list-bulleted',
+                    title:"Categorias",
+                    name:'Categories'
+                },
                  {
                     icon:'mdi-account',
                     title:"Acerca",

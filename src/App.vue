@@ -9,6 +9,7 @@
 
 <script>
 import NavBar from '@/components/NavBar.vue'
+import {mapActions} from 'vuex'
 export default {
   name: 'App',
 
@@ -17,6 +18,12 @@ export default {
   }),
   components:{
     'nav-bar': NavBar,
+  },
+  methods:{
+    ...mapActions(['fetchCategories'])
+  },
+  created(){
+    this.fetchCategories()
   }
 };
 </script>
