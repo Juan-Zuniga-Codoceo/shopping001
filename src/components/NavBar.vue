@@ -7,6 +7,10 @@
       <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
 
       <v-toolbar-title class="font-weight-bold">Shopping</v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-badge :content="cartCount" class="ma-3" :value="cartCount>0" >
+        <v-icon @click="redirectTo('Cart')" >mdi-cart</v-icon>
+      </v-badge>
     </v-app-bar>
 
     <v-navigation-drawer
@@ -42,6 +46,7 @@
 </template>
 
 <script>
+import {mapGetters} from 'vuex'
 export default {
     name: 'nav-bar',
     // props: {}, 
@@ -60,6 +65,11 @@ export default {
                     title:"Categorias",
                     name:'Categories'
                 },
+                {
+                  icon:'mdi-cart',
+                  title:'Carrito',
+                  name:'Cart'
+                },
                  {
                     icon:'mdi-account',
                     title:"Acerca",
@@ -69,6 +79,7 @@ export default {
         }
     },
     computed: {
+      ...mapGetters(['cartCount']),
         currentRoute(){
             return this.$route.name
         }
@@ -76,7 +87,7 @@ export default {
     methods: {
         redirectTo(nameRoute){
             this.$router.push({name:nameRoute})
-        }
+        },
     }
     //watch: {},
     // components: {},
