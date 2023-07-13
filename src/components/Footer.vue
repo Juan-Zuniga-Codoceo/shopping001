@@ -27,7 +27,14 @@ export default {
     name: 'footer-view',
     // props: {},
     data: function(){
-        return {}
+        return {
+            icons: [
+        'mdi-facebook',
+        'mdi-twitter',
+        'mdi-linkedin',
+        'mdi-instagram',
+      ],
+        }
     },
     // computed: {},
     //methods: {}

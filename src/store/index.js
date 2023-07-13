@@ -69,7 +69,7 @@ export default new Vuex.Store({
   actions: {
     async fetchCategories({commit}){
       try{
-        let response = await fetch('https://fakestoreapi.com/products/categories')
+        let response = await fetch('/categories.json')
         let categories = await response.json()
         commit('SET_CATEGORIES',categories)
       }
